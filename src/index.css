@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@theme {
+  --font-heading: "Playfair Display", serif;
+  --shadow-Card: 0 4px 4px 0 rgb(0 0 0 / 0.25);
+  --font-lato: "Lato", sans-serif;
+}
+@plugin "daisyui"{
+    themes: light --default
+}
+body{
+    overflow-x: clip;
+}
+
