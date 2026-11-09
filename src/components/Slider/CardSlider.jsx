@@ -1,13 +1,9 @@
 import { Children, useEffect, useRef, useState } from "react";
-import SliderArrow from "./SliderArrow";
 
 const TRANSITION_MS = 500;
 const AUTOPLAY_MS = 4500;
 const SWIPE_DISTANCE = 50;
 
-// The slides render three times so the row can loop without a visible jump.
-// `position` stays in the middle copy; after a move past either end it is
-// moved back to the matching slide there with the animation turned off.
 function CardSlider({ children, label }) {
   const slides = Children.toArray(children);
   const count = slides.length;
@@ -105,11 +101,6 @@ function CardSlider({ children, label }) {
       </div>
 
       <div className="flex items-center justify-center gap-5 mt-4">
-        <SliderArrow
-          direction="previous"
-          label="Previous slide"
-          onClick={() => move(-1)}
-        />
         <div className="flex items-center gap-2">
           {slides.map((_, index) => (
             <button
@@ -130,11 +121,6 @@ function CardSlider({ children, label }) {
             </button>
           ))}
         </div>
-        <SliderArrow
-          direction="next"
-          label="Next slide"
-          onClick={() => move(1)}
-        />
       </div>
     </div>
   );

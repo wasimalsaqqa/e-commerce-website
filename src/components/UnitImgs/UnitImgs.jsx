@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import SliderArrow from "../Slider/SliderArrow";
 
 const SWIPE_DISTANCE = 50;
 
@@ -57,18 +56,6 @@ function UnitImgs({ images = [], title = "" }) {
 
         {count > 1 && (
           <>
-            <SliderArrow
-              direction="previous"
-              label="Previous image"
-              onClick={previous}
-              className="absolute top-1/2 -translate-y-1/2 left-3"
-            />
-            <SliderArrow
-              direction="next"
-              label="Next image"
-              onClick={next}
-              className="absolute top-1/2 -translate-y-1/2 right-3"
-            />
             <span className="absolute bottom-3 right-3 rounded-full bg-[#8E1616]/90 px-3 py-0.5 font-lato font-bold text-sm text-white">
               {active + 1} / {count}
             </span>
